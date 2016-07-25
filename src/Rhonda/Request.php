@@ -32,8 +32,8 @@ class Request
     }
   }
 
-  private function is_json_object($object){
-    return (count(get_object_vars($object)) > 0);
+  private function is_json_object($thing){
+    return ( isset($thing) && is_object($thing) && (count(get_object_vars($thing)) > 0) );
   }
 
   private function sanitize_get_array($dirty){
